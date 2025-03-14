@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 @font-face {
     font-family: "Ivy Presto";
@@ -25,10 +26,26 @@ body {
     background-color: #fff;
 }
 
+a, button {
+    background-color: unset;
+    border: unset;
+    border-radius: unset;
+    outline: unset;
+    text-decoration: none;
+    color: unset;
+}
+
 header {
     position: fixed;
     top: 4%;
     left: 4%;
+    width: 92%;
+    z-index: 99;
+    mix-blend-mode: difference;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 header h1 {
@@ -40,31 +57,35 @@ header h1 {
 header h1 div {
     display: flex;
     flex-direction: row;
-    gap: 0.15vw;
     position: relative;
     overflow: hidden;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    color: #fff;
 }
 
-header h1 div span {
+header h1 div span, header button span {
     transition: all 0.3s ease;
 }
 
-header h1 div:nth-child(2) {
-    left: 25%;
-}
-
-header h1 div:nth-child(1) span:nth-child(2) {
+header h1 div:nth-child(1) span:nth-child(2), header button span:nth-child(2) {
     transform: translateY(100%);
 }
 
-header h1 div:nth-child(1) span:nth-child(3) {
+header h1 div:nth-child(1) span:nth-child(3), header button span:nth-child(3) {
     transform: translateY(100%);
     transition-delay: 0.1s;
 }
 
-header h1 div:nth-child(1) span:nth-child(4) {
+header h1 div:nth-child(1) span:nth-child(4), header button span:nth-child(4) {
     transform: translateY(100%);
     transition-delay: 0.2s;
+}
+
+header h1 div:nth-child(2) span:nth-child(1) {
+    transform: translateY(0.2vw);
+    font-family: Comfortaa;
+    font-weight: 600;
 }
 
 header h1 div:nth-child(2) span:nth-child(3) {
@@ -86,15 +107,15 @@ header h1 div:nth-child(2) span:nth-child(6) {
     transition-delay: 0.3s;
 }
 
-header:hover h1 div:nth-child(1) span:nth-child(2) {
+header:hover h1 div:nth-child(1) span:nth-child(2), header:hover button span:nth-child(2) {
     transform: translateY(0%);
 }
 
-header:hover h1 div:nth-child(1) span:nth-child(3) {
+header:hover h1 div:nth-child(1) span:nth-child(3), header:hover button span:nth-child(3) {
     transform: translateY(0%);
 }
 
-header:hover h1 div:nth-child(1) span:nth-child(4) {
+header:hover h1 div:nth-child(1) span:nth-child(4), header:hover button span:nth-child(4) {
     transform: translateY(0%);
 }
 
@@ -114,9 +135,68 @@ header:hover h1 div:nth-child(2) span:nth-child(6) {
     transform: translateY(0%);
 }
 
-a {
-    text-decoration: none;
-    color: unset;
+header button {
+    display: flex;
+    flex-direction: row;
+    font-size: 2vw;
+    line-height: 1.1;
+    font-weight: 300;
+    overflow: hidden;
+    font-family: 'Open Sans';
+    font-weight: 700;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+.menu {
+    position: fixed;
+    z-index: 90;
+    background-color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+}
+
+.menu-link {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.menu-link-set {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 100%;
+    width: 20%;
+}
+
+.menu-link-set p {
+    position: absolute;
+    font-size: 11vw;
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    top: 50%;
+    left: 50%;
+}
+
+.menu-link-set p:nth-child(1) {
+    transform: rotate(-90deg);
+}
+
+.menu-link-set p:nth-child(2) {
+    transform: rotate(-90deg);
 }
 
 
@@ -192,32 +272,33 @@ a {
 .home-banner-text {
     position: relative;
     z-index: 1;
-    font-size: 9vw;
+    font-size: 11vw;
     line-height: 1.3;
     letter-spacing: 0.3vw;
     position: fixed;
     transform: translateY(-50%);
     mix-blend-mode: difference;
+    color: #1e3635;
 }
 
 .home-banner-text1 {
-    top: 25%;
-    left: 30%;
+    top: 16%;
+    left: 34%;
 }
 
 .home-banner-text2 {
-    top: 42%;
+    top: 36%;
     left: 15%;
 }
 
 .home-banner-text3 {
-    top: 60%;
-    left: 25%;
+    top: 58%;
+    left: 27%;
 }
 
 .home-banner-text4 {
-    top: 77%;
-    left: 5%;
+    top: 78%;
+    left: 35%;
 }
 
 .home-banner-text1, .home-banner-text2 {
@@ -226,7 +307,8 @@ a {
 }
 
 .home-banner-img {
-    width: 10vw;
+    width: 13vw;
+    aspect-ratio: 16 / 10;
     position: absolute;
     line-height: 0;
     transform: translate(-50%, -50%);
@@ -234,25 +316,25 @@ a {
 }
 
 .home-banner-img:nth-child(5) {
-    top: 25%;
-    left: 23%;
+    top: 16%;
+    left: 25%;
     transform: translate(-50%, -40%);
 }
 
 .home-banner-img:nth-child(6) {
-    top: 42%;
-    left: 39.5%;
+    top: 36.5%;
+    left: 59%;
     transform: translate(-50%, -40%);
 }
 
 .home-banner-img:nth-child(7) {
-    top: 60%;
+    top: 57.5%;
     left: 18.5%;
 }
 
 .home-banner-img:nth-child(8) {
-    top: 60%;
-    left: 63%;
+    top: 57.5%;
+    left: 60%;
 }
 
 .home-banner-img img {
@@ -426,7 +508,7 @@ a {
 
 .home-about {
     padding: 5vw 0;
-    background-color: #000;
+    background-color: #1e3635;
     width: 100%;
     min-height: 100dvh;
     position: relative;
@@ -438,7 +520,7 @@ a {
 }
 
 .home-about .curve-edge div {
-    background-color: #000;
+    background-color: #1e3635;
 }
 
 .home-about-container {
@@ -462,6 +544,7 @@ a {
     font-weight: 300;
     position: relative;
     line-height: 1;
+    color: #e3572d;
 }
 
 .home-about-sec1 p:nth-child(1) {
@@ -482,7 +565,7 @@ a {
 
 .home-about-sec2 div:nth-child(1) {
     position: relative;
-    left: 25%;
+    left: 0%;
     display: flex;
     align-items: center;
     gap: 2vw;
@@ -507,6 +590,12 @@ a {
     left: 30%;
 }
 
+.home-about-sec2 p:nth-child(4) {
+    font-family: 'Ivy Presto';
+    font-weight: 300;
+    left: 25%;
+}
+
 .home-about-border {
     width: 100%;
     overflow: hidden;
@@ -525,12 +614,12 @@ a {
     width: 12vw;
     height: 12vw;
     border-radius: 50%;
-    background-color: #222;
+    background-color: #294b4a;
 }
 
 .home-about-border .home-about-border-sup {
     width: 17vw;
-    background-color: #fff;
+    background-color: #e3572d;
     border-radius: 7vw;
 }
 
@@ -541,7 +630,7 @@ a {
 
 .home-feature {
     padding: 13vh 0;
-    background-color: #000;
+    background-color: #1e3635;
 }
 
 .home-feature div {
@@ -558,6 +647,7 @@ a {
     color: #fff;
     position: relative;
     left: 10%;
+    color: #e3572d;
 }
 
 .des-tip::after {
@@ -580,6 +670,7 @@ a {
     color: #fff;
     align-self: flex-end;
     letter-spacing: 0.1vw;
+    color: #e3572d;
 }
 
 .home-feature h2 {
@@ -588,6 +679,7 @@ a {
     font-weight: 300;
     line-height: 1;
     letter-spacing: 0.3vw;
+    color: #e3572d;
 }
 
 .home-feature h2 span {
@@ -706,6 +798,7 @@ a {
 
 .footer-scroll-list p {
     font-size: 6vw;
+    color: #1e3635;
 }
 
 .footer-scroll-list div {
@@ -734,7 +827,7 @@ a {
     width: 70%;
     transform: translate(-75%, 0) rotate(0deg);
     transition: all 0.5s ease;
-    background-color: #000;
+    background-color: #1e3635;
     height: 100%;
 }
 
@@ -754,11 +847,13 @@ a {
     flex-direction: row;
     align-items: center;
     gap: 2vw;
+    color: #1e3635;
 }
 
 .footer-content span{
     font-size: 15vw;
     font-family: 'Ivy Presto';
+    color: #1e3635;
 }
 
 .footer-main {
@@ -773,12 +868,25 @@ a {
 
 .footer-main p {
     font-size: 13px;
+    color: #1e3635;
 }
 
 .footer-main a {
     font-size: 13px;
     text-decoration: underline;
+    color: #1e3635;
 }
 
 
 
+
+
+
+.about-feature {
+    background-color: #fff;
+    min-height: 100dvh;
+}
+
+.about-feature .home-feature-des {
+    color: #1e3635;
+}
