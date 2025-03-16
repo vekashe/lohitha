@@ -41,7 +41,7 @@ header {
     left: 4%;
     width: 92%;
     z-index: 99;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -61,7 +61,7 @@ header h1 div {
     overflow: hidden;
     font-family: 'Open Sans';
     font-weight: 700;
-    color: #fff;
+    color: #e3572d;
 }
 
 header h1 div span, header button span {
@@ -323,7 +323,7 @@ header button {
 
 .home-banner-img:nth-child(6) {
     top: 36.5%;
-    left: 59%;
+    left: 78%;
     transform: translate(-50%, -40%);
 }
 
